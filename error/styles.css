@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    display: flex;
+    color: white;
+    font-family: 'Open Sans', helvetica, arial, sans-serif;
+    line-height: 24px;
+}
+body.lightBody {
+    color: #002040;
+}
+body.darkBody {
+    background: #0050F0;
+}
+p {
+    font-size: 0.9em;
+    font-weight: 200;
+    margin: 0;
+}
+.darkBody a {
+    color: white;
+}
+.button {
+    background: #0050F0;
+    border: 0;
+    border-radius: 4px;
+    padding: 12px 24px;
+    font-size: 1em;
+    color: white;
+    align-self: flex-start;
+    margin-top: 40px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.errorCode {
+    color: #808090;
+    margin-top: 12px;
+}
+.logo {
+    max-width: 75%;
+}
+.image {
+    height: 100vh;
+    max-width: 50vw;
+    object-fit: cover;
+}
+.leftContainer {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+.content {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.messages {
+    margin: 24px 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+.primaryMessage {
+    font-size: 2em;
+    font-weight: 400;
+    margin-bottom: 16px;
+    line-height: 36px;
+}
+.secondaryMessage {
+    font-size: 1em;
+    font-weight: 400;
+}
