@@ -1,6 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600");
+
 body {
     margin: 0;
-    display: flex;
     color: white;
     font-family: 'Open Sans', helvetica, arial, sans-serif;
     line-height: 24px;
@@ -11,9 +12,12 @@ body.lightBody {
 body.darkBody {
     background: #0050F0;
 }
+a {
+    font-weight: 600;
+}
 p {
     font-size: 0.9em;
-    font-weight: 200;
+    font-weight: 300;
     margin: 0;
 }
 .darkBody a {
@@ -38,12 +42,20 @@ p {
 .logo {
     max-width: 75%;
 }
-.image {
+.imageContainer, .contentContainer {
+    position: absolute;
     height: 100vh;
-    max-width: 50vw;
+    width: 50vw;
+}
+.imageContainer img, .imageContainer .imageOverlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+.imageContainer img {
     object-fit: cover;
 }
-.leftContainer {
+.contentContainer {
     display: flex;
     justify-content: center;
     flex-grow: 1;
@@ -52,7 +64,6 @@ p {
     padding: 24px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 .messages {
     margin: 24px 0 40px 0;
@@ -63,11 +74,30 @@ p {
 }
 .primaryMessage {
     font-size: 2em;
-    font-weight: 400;
+    font-weight: 600;
     margin-bottom: 16px;
     line-height: 36px;
 }
 .secondaryMessage {
     font-size: 1em;
     font-weight: 400;
+}
+
+@media (max-width: 767px) {
+    body.darkBody .imageOverlay {
+        background: rgba(0,80,240,0.9);
+    }
+    body.lightBody .imageOverlay {
+        background: rgba(255,255,255,0.9);
+    }
+    .imageContainer, .contentContainer {
+        height: 100vh;
+        width: 100vw;
+    }
+}
+
+@media (min-width: 768px) {
+    .imageContainer {
+        left: 50vw;
+    }
 }

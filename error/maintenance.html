@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <title>Offline for maintenance - Plexus Gateway</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        .image {
-            object-fit: scale-down;
-            background: #eceef0;
-        }
-    </style>
 </head>
 <body class="darkBody">
-    <div class="leftContainer">
+    <div class="imageContainer">
+        <img src="maintenance.png" alt="A colourful keyboard on a white desk" />
+        <div class="imageOverlay"></div>
+    </div>
+    <div class="contentContainer">
         <div class="content">
             <img class="logo" src="logo_white.svg" alt="Plexus logo" />
             <div class="messages">
@@ -27,6 +25,16 @@
             </div>
         </div>
     </div>
-    <img class="image" src="maintenance.png" alt="A colourful keyboard on a white desk" />
+    <script>
+        const isTestEnvironment = /^(legal-gateway-staticfiles-)?(local|demo|sandbox|dev|127)/.test(
+            window.location.hostname
+        )
+        console.log(`Loading Intercom for ${isTestEnvironment ? "test" : "production"} environment...`)
+        const APP_ID = isTestEnvironment ? "m36cf65k" : "js75ahv6";
+        window.intercomSettings = {
+            app_id: APP_ID
+          };
+        (function(){var w=window;var ic=w.Intercom;if(typeof ic==="function"){ic('reattach_activator');ic('update',w.intercomSettings);}else{var d=document;var i=function(){i.c(arguments);};i.q=[];i.c=function(args){i.q.push(args);};w.Intercom=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://widget.intercom.io/widget/' + APP_ID;var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);};if(document.readyState==='complete'){l();}else if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})();
+    </script>
 </body>
 </html>
