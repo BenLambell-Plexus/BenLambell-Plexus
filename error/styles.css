@@ -39,9 +39,6 @@ p {
     color: #808090;
     margin-top: 12px;
 }
-.logo {
-    max-width: 75%;
-}
 .imageContainer, .contentContainer {
     position: absolute;
     height: 100vh;
@@ -64,6 +61,7 @@ p {
     padding: 24px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
 }
 .messages {
     margin: 24px 0 40px 0;
